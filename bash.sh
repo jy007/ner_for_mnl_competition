@@ -2,7 +2,7 @@ CURRENT_DIR=`pwd`
 export BERT_BASE_DIR=$CURRENT_DIR/bert-base
 export DATA_DIR=$CURRENT_DIR/data
 export OUTPUR_DIR=$CURRENT_DIR/outputs
-TASK_NAME="cner"
+TASK_NAME="mininglamp"
 #
 python run_ner_crf.py \
   --model_type=bert \

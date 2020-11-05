@@ -1,0 +1,140 @@
+Process rank: -1,device: cpu ,n_gpus: 0,distributed training: False,16-bits training: False
+loading configuration file /Users/jy/study_code/ner_tf/ner_cner_diy/bert-base/bert_config.json
+Model config BertConfig {
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1",
+    "2": "LABEL_2",
+    "3": "LABEL_3",
+    "4": "LABEL_4",
+    "5": "LABEL_5",
+    "6": "LABEL_6",
+    "7": "LABEL_7",
+    "8": "LABEL_8",
+    "9": "LABEL_9",
+    "10": "LABEL_10",
+    "11": "LABEL_11",
+    "12": "LABEL_12",
+    "13": "LABEL_13",
+    "14": "LABEL_14",
+    "15": "LABEL_15",
+    "16": "LABEL_16",
+    "17": "LABEL_17",
+    "18": "LABEL_18",
+    "19": "LABEL_19",
+    "20": "LABEL_20",
+    "21": "LABEL_21",
+    "22": "LABEL_22",
+    "23": "LABEL_23",
+    "24": "LABEL_24",
+    "25": "LABEL_25",
+    "26": "LABEL_26",
+    "27": "LABEL_27",
+    "28": "LABEL_28",
+    "29": "LABEL_29",
+    "30": "LABEL_30",
+    "31": "LABEL_31",
+    "32": "LABEL_32",
+    "33": "LABEL_33",
+    "34": "LABEL_34",
+    "35": "LABEL_35"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1,
+    "LABEL_10": 10,
+    "LABEL_11": 11,
+    "LABEL_12": 12,
+    "LABEL_13": 13,
+    "LABEL_14": 14,
+    "LABEL_15": 15,
+    "LABEL_16": 16,
+    "LABEL_17": 17,
+    "LABEL_18": 18,
+    "LABEL_19": 19,
+    "LABEL_2": 2,
+    "LABEL_20": 20,
+    "LABEL_21": 21,
+    "LABEL_22": 22,
+    "LABEL_23": 23,
+    "LABEL_24": 24,
+    "LABEL_25": 25,
+    "LABEL_26": 26,
+    "LABEL_27": 27,
+    "LABEL_28": 28,
+    "LABEL_29": 29,
+    "LABEL_3": 3,
+    "LABEL_30": 30,
+    "LABEL_31": 31,
+    "LABEL_32": 32,
+    "LABEL_33": 33,
+    "LABEL_34": 34,
+    "LABEL_35": 35,
+    "LABEL_4": 4,
+    "LABEL_5": 5,
+    "LABEL_6": 6,
+    "LABEL_7": 7,
+    "LABEL_8": 8,
+    "LABEL_9": 9
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "type_vocab_size": 2,
+  "vocab_size": 21128
+}
+
+Model name '/Users/jy/study_code/ner_tf/ner_cner_diy/bert-base/vocab.txt' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased, TurkuNLP/bert-base-finnish-cased-v1, TurkuNLP/bert-base-finnish-uncased-v1, wietsedv/bert-base-dutch-cased). Assuming '/Users/jy/study_code/ner_tf/ner_cner_diy/bert-base/vocab.txt' is a path, a model identifier, or url to a directory containing tokenizer files.
+Calling CNerTokenizer.from_pretrained() with the path to a single file or url is deprecated
+loading file /Users/jy/study_code/ner_tf/ner_cner_diy/bert-base/vocab.txt
+loading weights file /Users/jy/study_code/ner_tf/ner_cner_diy/bert-base/pytorch_model.bin
+Some weights of the model checkpoint at /Users/jy/study_code/ner_tf/ner_cner_diy/bert-base were not used when initializing BertCrfForNer: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias']
+- This IS expected if you are initializing BertCrfForNer from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPretraining model).
+- This IS NOT expected if you are initializing BertCrfForNer from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertCrfForNer were not initialized from the model checkpoint at /Users/jy/study_code/ner_tf/ner_cner_diy/bert-base and are newly initialized: ['classifier.weight', 'classifier.bias', 'crf.start_transitions', 'crf.end_transitions', 'crf.transitions']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Training/evaluation parameters Namespace(adam_epsilon=1e-08, adv_epsilon=1.0, adv_name='word_embeddings', cache_dir='', config_name='/Users/jy/study_code/ner_tf/ner_cner_diy/bert-base/bert_config.json', crf_learning_rate=0.001, data_dir='/Users/jy/study_code/ner_tf/ner_cner_diy/data/mininglamp/', device=device(type='cpu'), do_adv=False, do_eval=True, do_lower_case=True, do_predict=False, do_train=True, eval_all_checkpoints=False, eval_max_seq_length=512, evaluate_during_training=False, fp16=False, fp16_opt_leval='01', gradient_accumulation_steps=1, id2label={0: 'X', 1: 'B-EMAIL', 2: 'B-SCENE', 3: 'B-NAME', 4: 'I-MOBILE', 5: 'I-POSITION', 6: 'B-BOOK', 7: 'B-ORGANIZATION', 8: 'I-MOVIE', 9: 'B-MOBILE', 10: 'I-COMPANY', 11: 'I-SCENE', 12: 'I-EMAIL', 13: 'B-POSITION', 14: 'B-QQ', 15: 'B-GOVERNMENT', 16: 'B-COMPANY', 17: 'S-MOVIE', 18: 'I-BOOK', 19: 'I-ORGANIZATION', 20: 'S-NAME', 21: 'B-ADDRESS', 22: 'I-GOVERNMENT', 23: 'I-GAME', 24: 'S-COMPANY', 25: 'B-VX', 26: 'I-NAME', 27: 'B-GAME', 28: 'I-ADDRESS', 29: 'B-MOVIE', 30: 'S-ADDRESS', 31: 'I-QQ', 32: 'I-VX', 33: '[START]', 34: '[END]', 35: 'O'}, label2id={'X': 0, 'B-EMAIL': 1, 'B-SCENE': 2, 'B-NAME': 3, 'I-MOBILE': 4, 'I-POSITION': 5, 'B-BOOK': 6, 'B-ORGANIZATION': 7, 'I-MOVIE': 8, 'B-MOBILE': 9, 'I-COMPANY': 10, 'I-SCENE': 11, 'I-EMAIL': 12, 'B-POSITION': 13, 'B-QQ': 14, 'B-GOVERNMENT': 15, 'B-COMPANY': 16, 'S-MOVIE': 17, 'I-BOOK': 18, 'I-ORGANIZATION': 19, 'S-NAME': 20, 'B-ADDRESS': 21, 'I-GOVERNMENT': 22, 'I-GAME': 23, 'S-COMPANY': 24, 'B-VX': 25, 'I-NAME': 26, 'B-GAME': 27, 'I-ADDRESS': 28, 'B-MOVIE': 29, 'S-ADDRESS': 30, 'I-QQ': 31, 'I-VX': 32, '[START]': 33, '[END]': 34, 'O': 35}, learning_rate=3e-05, local_rank=-1, logging_steps=448, loss_type='ce', markup='bios', max_grad_norm=1.0, max_steps=-1, model_name_or_path='/Users/jy/study_code/ner_tf/ner_cner_diy/bert-base', model_type='bert', n_gpu=0, no_cuda=False, num_train_epochs=4.0, output_dir='/Users/jy/study_code/ner_tf/ner_cner_diy/outputs/mininglamp_output/bert', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=24, per_gpu_train_batch_size=24, predict_checkpoints=0, save_steps=448, seed=42, server_ip='', server_port='', task_name='mininglamp', tokenizer_name='/Users/jy/study_code/ner_tf/ner_cner_diy/bert-base/vocab.txt', train_max_seq_length=128, warmup_proportion=0.1, weight_decay=0.01)
+Creating features from dateset file at /Users/jy/study_code/ner_tf/ner_cner_diy/data/mininglamp/cache_crf-train_bert-base_128_mininglamp
+Writing example 0 of 1891
+*** Example ***
+tokens:[CLS]文化创意、高端休闲度假等诸多高端业态，在不久将来，燕郊区域内将涌现航天科技中心、太空体验基地、对于大多数魔兽爱好者来说，我觉得当你在关注电子竞技的时候，你就是在支持电子竞技！[SEP]
+input ids:1013152126511582692510777049998287312242896950236436191477704999689257880241762679719219933418024424269461277181810792199386943855661192149062825704255251019224958860774118251765510219075419201914314477951077426319625442334164328024276962302533249687217621068380045102094499328254638319895280248722218322117623118289845102094499328258013102000000000000000000000000000000000000000
+segment ids:00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+labels ids:353535353535353535353535353535353535353535353535353521282828353535351610101010103521111111111353535353535272335353535353535353535353535353535353535353535353535353535353535353535000000000000000000000000000000000000000
+*** Example ***
+tokens:[CLS]2013年电影＜3d冰封侠＞2012年电视剧《情感战争》《红娘子》电影《嫁个一百分男人》《最长的拥抱》工作采访洽谈请联系宣传部85172333-606，中盟世纪（北京）传媒有限公司董事ceo[SEP]
+input ids:101123121122124239945102512804012414611022196899804212312112212323994510622811965172658269727737515185175273202320945184510251251720637026714636114645117825185173297727046382881284951823398687023639338356448643554685143214683769561291261221281231241241241181271211278024704467368652798020126677680218372054330073611062138558697521451471571020000000000000000000000000000000
+segment ids:00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+labels ids:35353535353535353535353535353535353535353535353535353535353535353535353535353535353535353535353535353535353535353535353535353535944444444444351610101010101010101010101010135353535350000000000000000000000000000000
+*** Example ***
+tokens:[CLS]有专家建议立法明确监管检查违规出租的主体，并加强购买者后期资产的监管，以填补目前政策中的空白。[SEP]
+input ids:1013300683215724566379498937913209480246645052346633896824622611394909463871286080242400121724876579743544214003309659877246384664505280248091856613346801184312450327044638495846355111020000000000000000000000000000000000000000000000000000000000000000000000000000000
+segment ids:00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+labels ids:35351353535353535353535353535353535353535353535353535353535353535353535353535353535353535353535350000000000000000000000000000000000000000000000000000000000000000000000000000000
+*** Example ***
+tokens:[CLS]今年年中，香港投资者投资accumulator合约产生巨亏，已经引发了香港证监会、李女士表示，见利息比本金还要多，心里特别奇怪。[UNK]打电话向交行信用卡客服热线咨询，热线工作人员解释，（《老无所依》（nocountryforoldmen），伊桑-科恩（et[SEP]
+input ids:10179123992399704802476763949283265985442283265981431451451631551631541431621571601394527677244952342755802423475307247113557497676394963954664833510333019571894613448508024622411642622368333157032682062061914802425527027429411661936259751110028024510641314037696121928450013052145330241785296148664188024417852962339868782144762377025802480205175439318727928985188020156157145157163156162160167148157160157154146155147156802180248233433118490626178020147162102
+segment ids:00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+labels ids:35353535353535353535353535161010101010101010101035353535353535353535353515222222223535353535353535353535353535353535353535353535353535353535161035353513535353535353535353535353535353529888882988888888888888888883532626262626262635
+*** Example ***
+tokens:[CLS]只是深吸一口，就让人畅快无比，回味无穷。一道血光朝着紫霞山山脚疾驰而去，速度宛如流星一般。[SEP]
+input ids:101137232213918142967113668024221863757824517257131873683802417261456318749565116716887611710453308470851667459225522555558456577205445134380246862242821381963383732156715663511102000000000000000000000000000000000000000000000000000000000000000000000000000000000
+segment ids:00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+labels ids:3535353535353535353535353535353535353535353535353535352128283535353535353535353535353535353535000000000000000000000000000000000000000000000000000000000000000000000000000000000
+save features into cached file /Users/jy/study_code/ner_tf/ner_cner_diy/data/mininglamp/cache_crf-train_bert-base_128_mininglamp
