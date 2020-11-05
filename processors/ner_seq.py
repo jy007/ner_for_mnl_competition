@@ -102,12 +102,12 @@ class CluenerProcessors(DataProcess):
 class CnerProcessor(DataProcess):
     """processor for the chinese ner data set"""
     def get_train_examples(self,data_dir):
-        return self._create_examples(self._read_txt(os.path.join(data_dir,"train.char.bmes")),"train")
+        return self._create_examples(self._read_txt(os.path.join(data_dir,"train.data")),"train")
 
     def get_dev_examples(self,data_dir):
-        return self._create_examples(self._read_txt(os.path.join(data_dir,"dev.char.bmes")),"dev")
+        return self._create_examples(self._read_txt(os.path.join(data_dir,"dev.data")),"dev")
     def get_test_examples(self,data_dir):
-        return self._create_examples(self._read_txt(os.path.join(data_dir,"train.char.bmes")),"test")
+        return self._create_examples(self._read_txt(os.path.join(data_dir,"train.data")),"test")
 
     def get_labels(self):
         return ["X",'B-CONT','B-EDU','B-LOC','B-NAME','B-ORG','B-PRO','B-RACE','B-TITLE',
