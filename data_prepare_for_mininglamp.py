@@ -27,7 +27,7 @@ def read_and_write(file_index,data_path,label_path,output_path,sub_fix= "",_type
                         all_labels.add("B-{}".format(class_name).upper())
                         all_labels.add("I-{}".format(class_name).upper())
                     elif int(pos_e) == int(pos_b):
-                        tags[int(pos_b)] =  ["S-{}".format(class_name).upper()]
+                        tags[int(pos_b)] =  "S-{}".format(class_name).upper()
                         all_labels.add("S-{}".format(class_name).upper())
                     else:
                         continue

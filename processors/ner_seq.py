@@ -110,9 +110,18 @@ class CnerProcessor(DataProcess):
         return self._create_examples(self._read_txt(os.path.join(data_dir,"train.data")),"test")
 
     def get_labels(self):
-        return ["X",'B-CONT','B-EDU','B-LOC','B-NAME','B-ORG','B-PRO','B-RACE','B-TITLE',
-                'I-CONT','I-EDU','I-LOC','I-NAME','I-ORG','I-PRO','I-RACE','I-TITLE',
-                'O','S-NAME','S-ORG','S-RACE',"[START]", "[END]"]
+
+        return ["X","B-EMAIL","B-SCENE","B-NAME","I-MOBILE","I-POSITION","B-BOOK","B-ORGANIZATION","I-MOVIE",
+                "B-MOBILE","I-COMPANY", "I-SCENE","I-EMAIL", "B-POSITION", "B-QQ" ,"B-GOVERNMENT" ,"B-COMPANY","S-MOVIE" ,"I-BOOK", 
+                "I-ORGANIZATION" ,"S-NAME" ,"B-ADDRESS" ,"I-GOVERNMENT", "I-GAME", "S-COMPANY" ,"B-VX","I-NAME","B-GAME", 
+                "I-ADDRESS" ,"B-MOVIE" ,"S-ADDRESS","I-QQ" ,"I-VX","[START]","[END]","O"]
+
+
+
+
+        # return ["X",'B-CONT','B-EDU','B-LOC','B-NAME','B-ORG','B-PRO','B-RACE','B-TITLE',
+        #         'I-CONT','I-EDU','I-LOC','I-NAME','I-ORG','I-PRO','I-RACE','I-TITLE',
+        #         'O','S-NAME','S-ORG','S-RACE',"[START]", "[END]"]
 
     def _create_examples(self,lines,set_type):
         "create  examples for training and dev data set"
@@ -148,12 +157,14 @@ def convert_examples_to_features(examples,label_list,max_seq_length,tokenizer,
     `cls_token_segment_id ` define the segment id associated to the CLS token(0 for BERT,2 for XLNET)
     """
     label_map = {label:i for i,label in enumerate(label_list)}
+    
     features =[]
 
     for (ex_index,example) in enumerate(examples):
         if ex_index % 10000 ==0:
             logger.info("Writing example %d of %d",ex_index,len(examples))
         tokens = tokenizer.tokenize(example.text_a)
+        print(f"examples is {example.labels}")
         label_ids = [label_map[l] for l in example.labels]
 
         #account for [CLS] and [SEP] with -2
