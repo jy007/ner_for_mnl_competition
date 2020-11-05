@@ -226,6 +226,6 @@ def convert_examples_to_features(examples,label_list,max_seq_length,tokenizer,
 
 
 ner_processors = {
-    "cner": CnerProcessor,
+    "mininglamp": CnerProcessor,
     "cluener":CluenerProcessors
 }
