@@ -1,0 +1,5 @@
+/bert-base/*
+/bert-base
+/data/cner/
+/data/mininglamp/train
+/data/mininglamp/test
