@@ -12,7 +12,7 @@ def get_entities(seq,id2label,markup="bios"):
 
 def get_entity_bios(seq,id2label):
 
-    seq = [id2label[x] for x in seq]
+    seq = [id2label[x] if not type(x) == str else x for x in seq]
     chunks = []
     chunk = [-1,-1,-1]
 
@@ -51,7 +51,7 @@ def get_entity_bios(seq,id2label):
 
 def get_entity_bios(seq,id2label):
 
-    seq = [id2label[x] for x in seq]
+    seq = [id2label[x]  if not type(x) == str else x for x in seq] 
     chunks = []
     chunk = [-1,-1,-1]
 
@@ -121,6 +121,6 @@ class SeqEntityScore(object):
 
         recall,precision,f1 = self.compute(origins,founds,rights)
 
-        return {"acc":precision,"recall":recall,"f1",f1},class_info
+        return {"acc":precision,"recall":recall,"f1":f1},class_info
 
 

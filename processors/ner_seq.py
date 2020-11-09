@@ -119,9 +119,9 @@ class CnerProcessor(DataProcess):
 
 
 
-        # return ["X",'B-CONT','B-EDU','B-LOC','B-NAME','B-ORG','B-PRO','B-RACE','B-TITLE',
-        #         'I-CONT','I-EDU','I-LOC','I-NAME','I-ORG','I-PRO','I-RACE','I-TITLE',
-        #         'O','S-NAME','S-ORG','S-RACE',"[START]", "[END]"]
+#         return ["X",'B-CONT','B-EDU','B-LOC','B-NAME','B-ORG','B-PRO','B-RACE','B-TITLE',
+#                 'I-CONT','I-EDU','I-LOC','I-NAME','I-ORG','I-PRO','I-RACE','I-TITLE',
+#                 'O','S-NAME','S-ORG','S-RACE',"[START]", "[END]"]
 
     def _create_examples(self,lines,set_type):
         "create  examples for training and dev data set"
@@ -164,9 +164,7 @@ def convert_examples_to_features(examples,label_list,max_seq_length,tokenizer,
         if ex_index % 10000 ==0:
             logger.info("Writing example %d of %d",ex_index,len(examples))
         tokens = tokenizer.tokenize(example.text_a)
-        print(f"examples is {example.labels}")
-        label_ids = [label_map[l] for l in example.labels]
-
+        label_ids = [label_map[x] for x in example.labels] 
         #account for [CLS] and [SEP] with -2
         special_tokens_count = 2
         if len(tokens) > max_seq_length - special_tokens_count:
@@ -212,7 +210,7 @@ def convert_examples_to_features(examples,label_list,max_seq_length,tokenizer,
 
         if ex_index < 5:
             logger.info("*** Example ***")
-            logger.info("guid",example.guid)
+            logger.info("guid:%s",example.guid)
             logger.info("tokens:%s","".join([str(x) for x in tokens]))
             logger.info("input ids:%s","".join([str(x) for x in input_ids]))
             logger.info("segment ids:%s","".join([str(x) for x in segment_ids]))

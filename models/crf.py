@@ -95,7 +95,8 @@ class CRF(nn.Module):
                                                 device = emissions.device
             )
             mask = mask.byte()
-        
+        if mask.dtype != torch.uint8:
+            mask = mask.byte() 
         self._validate(emissions,mask=mask)
 
         if self.batch_first:
@@ -116,7 +117,7 @@ class CRF(nn.Module):
             raise ValueError(f"emissions must have dimension 3,got {emissions.dim()}")
         if emissions.size(2) != self.num_tags:
             raise ValueError(f"expected last dimension of emissions is {self.num_tags}",
-                    f"got {self.emissions.size(2)}")
+                    f"got {emissions.size(2)}")
         
         if tags is not None:
             if emissions.shape[:2] != tags.shape:

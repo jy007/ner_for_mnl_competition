@@ -4,3 +4,6 @@
 /data/mininglamp/train
 /data/mininglamp/test
 /output/
+/outputs/
+/data/
+/*.txt

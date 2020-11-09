@@ -22,7 +22,7 @@ class BertCrfForNer(BertPreTrainedModel):
         sequence_output = self.dropout(sequence_output)
 
         logits = self.classifier(sequence_output)
-        ouputs = (logits,)
+        outputs = (logits,)
         if labels is not None:
             loss = self.crf(emissions=logits,tags=labels,mask=attention_mask)
             outputs = (-1 * loss,) + outputs

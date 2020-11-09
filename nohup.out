@@ -1,115 +1,3616 @@
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:541: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+/data1/anaconda3/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:523: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
   _np_qint8 = np.dtype([("qint8", np.int8, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:542: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+/data1/anaconda3/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:524: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
   _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:543: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+/data1/anaconda3/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
   _np_qint16 = np.dtype([("qint16", np.int16, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:544: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+/data1/anaconda3/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
   _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:545: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+/data1/anaconda3/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
   _np_qint32 = np.dtype([("qint32", np.int32, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:550: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+/data1/anaconda3/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:532: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
   np_resource = np.dtype([("resource", np.ubyte, 1)])
-11/05/2020 16:20:35-WARNING-root- Process rank: -1,device: cuda ,n_gpus: 10,distributed training: False,16-bits training: False
-Traceback (most recent call last):
-  File "run_ner_crf.py", line 566, in <module>
+11/06/2020 17:57:46-WARNING-root- Process rank: -1,device: cuda ,n_gpus: 10,distributed training: False,16-bits training: False
+11/06/2020 17:57:46-INFO-transformers.configuration_utils- loading configuration file /home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base/bert_config.json
+11/06/2020 17:57:46-INFO-transformers.configuration_utils- Model config BertConfig {
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1",
+    "2": "LABEL_2",
+    "3": "LABEL_3",
+    "4": "LABEL_4",
+    "5": "LABEL_5",
+    "6": "LABEL_6",
+    "7": "LABEL_7",
+    "8": "LABEL_8",
+    "9": "LABEL_9",
+    "10": "LABEL_10",
+    "11": "LABEL_11",
+    "12": "LABEL_12",
+    "13": "LABEL_13",
+    "14": "LABEL_14",
+    "15": "LABEL_15",
+    "16": "LABEL_16",
+    "17": "LABEL_17",
+    "18": "LABEL_18",
+    "19": "LABEL_19",
+    "20": "LABEL_20",
+    "21": "LABEL_21",
+    "22": "LABEL_22",
+    "23": "LABEL_23",
+    "24": "LABEL_24",
+    "25": "LABEL_25",
+    "26": "LABEL_26",
+    "27": "LABEL_27",
+    "28": "LABEL_28",
+    "29": "LABEL_29",
+    "30": "LABEL_30",
+    "31": "LABEL_31",
+    "32": "LABEL_32",
+    "33": "LABEL_33",
+    "34": "LABEL_34",
+    "35": "LABEL_35"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1,
+    "LABEL_10": 10,
+    "LABEL_11": 11,
+    "LABEL_12": 12,
+    "LABEL_13": 13,
+    "LABEL_14": 14,
+    "LABEL_15": 15,
+    "LABEL_16": 16,
+    "LABEL_17": 17,
+    "LABEL_18": 18,
+    "LABEL_19": 19,
+    "LABEL_2": 2,
+    "LABEL_20": 20,
+    "LABEL_21": 21,
+    "LABEL_22": 22,
+    "LABEL_23": 23,
+    "LABEL_24": 24,
+    "LABEL_25": 25,
+    "LABEL_26": 26,
+    "LABEL_27": 27,
+    "LABEL_28": 28,
+    "LABEL_29": 29,
+    "LABEL_3": 3,
+    "LABEL_30": 30,
+    "LABEL_31": 31,
+    "LABEL_32": 32,
+    "LABEL_33": 33,
+    "LABEL_34": 34,
+    "LABEL_35": 35,
+    "LABEL_4": 4,
+    "LABEL_5": 5,
+    "LABEL_6": 6,
+    "LABEL_7": 7,
+    "LABEL_8": 8,
+    "LABEL_9": 9
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "type_vocab_size": 2,
+  "vocab_size": 21128
+}
+
+11/06/2020 17:57:46-INFO-transformers.tokenization_utils_base- Model name '/home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base/vocab.txt' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased, TurkuNLP/bert-base-finnish-cased-v1, TurkuNLP/bert-base-finnish-uncased-v1, wietsedv/bert-base-dutch-cased). Assuming '/home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base/vocab.txt' is a path, a model identifier, or url to a directory containing tokenizer files.
+11/06/2020 17:57:46-WARNING-transformers.tokenization_utils_base- Calling CNerTokenizer.from_pretrained() with the path to a single file or url is deprecated
+11/06/2020 17:57:46-INFO-transformers.tokenization_utils_base- loading file /home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base/vocab.txt
+11/06/2020 17:57:46-INFO-transformers.modeling_utils- loading weights file /home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base/pytorch_model.bin
+11/06/2020 17:57:49-WARNING-transformers.modeling_utils- Some weights of the model checkpoint at /home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base were not used when initializing BertCrfForNer: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias']
+- This IS expected if you are initializing BertCrfForNer from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPretraining model).
+- This IS NOT expected if you are initializing BertCrfForNer from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+11/06/2020 17:57:49-WARNING-transformers.modeling_utils- Some weights of BertCrfForNer were not initialized from the model checkpoint at /home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base and are newly initialized: ['classifier.weight', 'classifier.bias', 'crf.start_transitions', 'crf.end_transitions', 'crf.transitions']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+11/06/2020 17:57:53-INFO-root- Training/evaluation parameters Namespace(adam_epsilon=1e-08, adv_epsilon=1.0, adv_name='word_embeddings', cache_dir='', config_name='/home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base/bert_config.json', crf_learning_rate=0.005, data_dir='/home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/data/mininglamp/', device=device(type='cuda'), do_adv=False, do_eval=True, do_lower_case=True, do_predict=False, do_train=True, eval_all_checkpoints=False, eval_max_seq_length=512, evaluate_during_training=False, fp16=False, fp16_opt_leval='01', gradient_accumulation_steps=1, id2label={0: 'X', 1: 'B-EMAIL', 2: 'B-SCENE', 3: 'B-NAME', 4: 'I-MOBILE', 5: 'I-POSITION', 6: 'B-BOOK', 7: 'B-ORGANIZATION', 8: 'I-MOVIE', 9: 'B-MOBILE', 10: 'I-COMPANY', 11: 'I-SCENE', 12: 'I-EMAIL', 13: 'B-POSITION', 14: 'B-QQ', 15: 'B-GOVERNMENT', 16: 'B-COMPANY', 17: 'S-MOVIE', 18: 'I-BOOK', 19: 'I-ORGANIZATION', 20: 'S-NAME', 21: 'B-ADDRESS', 22: 'I-GOVERNMENT', 23: 'I-GAME', 24: 'S-COMPANY', 25: 'B-VX', 26: 'I-NAME', 27: 'B-GAME', 28: 'I-ADDRESS', 29: 'B-MOVIE', 30: 'S-ADDRESS', 31: 'I-QQ', 32: 'I-VX', 33: '[START]', 34: '[END]', 35: 'O'}, label2id={'X': 0, 'B-EMAIL': 1, 'B-SCENE': 2, 'B-NAME': 3, 'I-MOBILE': 4, 'I-POSITION': 5, 'B-BOOK': 6, 'B-ORGANIZATION': 7, 'I-MOVIE': 8, 'B-MOBILE': 9, 'I-COMPANY': 10, 'I-SCENE': 11, 'I-EMAIL': 12, 'B-POSITION': 13, 'B-QQ': 14, 'B-GOVERNMENT': 15, 'B-COMPANY': 16, 'S-MOVIE': 17, 'I-BOOK': 18, 'I-ORGANIZATION': 19, 'S-NAME': 20, 'B-ADDRESS': 21, 'I-GOVERNMENT': 22, 'I-GAME': 23, 'S-COMPANY': 24, 'B-VX': 25, 'I-NAME': 26, 'B-GAME': 27, 'I-ADDRESS': 28, 'B-MOVIE': 29, 'S-ADDRESS': 30, 'I-QQ': 31, 'I-VX': 32, '[START]': 33, '[END]': 34, 'O': 35}, learning_rate=5e-05, local_rank=-1, logging_steps=448, loss_type='ce', markup='bios', max_grad_norm=1.0, max_steps=-1, model_name_or_path='/home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base', model_type='bert', n_gpu=10, no_cuda=False, num_train_epochs=80.0, output_dir='/home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/outputs/mininglamp_output/bert', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=32, per_gpu_train_batch_size=32, predict_checkpoints=0, save_steps=448, seed=42, server_ip='', server_port='', task_name='mininglamp', tokenizer_name='/home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base/vocab.txt', train_max_seq_length=128, warmup_proportion=0.1, weight_decay=0.01)
+11/06/2020 17:57:53-INFO-root- Loading features from cache file /home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/data/mininglamp/cache_crf-train_bert-base_128_mininglamp
+/data1/anaconda3/lib/python3.6/site-packages/torch/nn/parallel/_functions.py:61: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+11/06/2020 17:58:47-INFO-root- 
+
+11/06/2020 17:59:04-INFO-root- 
+
+11/06/2020 17:59:21-INFO-root- 
+
+11/06/2020 17:59:38-INFO-root- 
+
+11/06/2020 17:59:55-INFO-root- 
+
+11/06/2020 18:00:11-INFO-root- 
+
+11/06/2020 18:00:28-INFO-root- 
+
+11/06/2020 18:00:45-INFO-root- 
+
+11/06/2020 18:01:02-INFO-root- 
+
+{
+  "input_ids": [
+    101,
+    3152,
+    1265,
+    1158,
+    2692,
+    510,
+    7770,
+    4999,
+    828,
+    7312,
+    2428,
+    969,
+    5023,
+    6436,
+    1914,
+    7770,
+    4999,
+    689,
+    2578,
+    8024,
+    1762,
+    679,
+    719,
+    2199,
+    3341,
+    8024,
+    4242,
+    6946,
+    1277,
+    1818,
+    1079,
+    2199,
+    3869,
+    4385,
+    5661,
+    1921,
+    4906,
+    2825,
+    704,
+    2552,
+    510,
+    1922,
+    4958,
+    860,
+    7741,
+    1825,
+    1765,
+    510,
+    2190,
+    754,
+    1920,
+    1914,
+    3144,
+    7795,
+    1077,
+    4263,
+    1962,
+    5442,
+    3341,
+    6432,
+    8024,
+    2769,
+    6230,
+    2533,
+    2496,
+    872,
+    1762,
+    1068,
+    3800,
+    4510,
+    2094,
+    4993,
+    2825,
+    4638,
+    3198,
+    952,
+    8024,
+    872,
+    2218,
+    3221,
+    1762,
+    3118,
+    2898,
+    4510,
+    2094,
+    4993,
+    2825,
+    8013,
+    102,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "input_len": 89,
+  "input_mask": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "label_ids": [
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    21,
+    28,
+    28,
+    28,
+    35,
+    35,
+    35,
+    35,
+    16,
+    10,
+    10,
+    10,
+    10,
+    10,
+    35,
+    2,
+    11,
+    11,
+    11,
+    11,
+    11,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    27,
+    23,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "segment_id": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ]
+}
+
+[Training] 1/6 [====>.........................] - ETA: 3:38  loss: 378.4330 [Training] 2/6 [=========>....................] - ETA: 1:31  loss: 366.4100 [Training] 3/6 [==============>...............] - ETA: 47s  loss: 365.4246 [Training] 4/6 [===================>..........] - ETA: 25s  loss: 368.0694 [Training] 5/6 [========================>.....] - ETA: 10s  loss: 353.7149 [Training] 6/6 [==============================] 9.1s/step  loss: 363.0139 [Training] 1/6 [====>.........................] - ETA: 23s  loss: 367.8582 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 360.7956 [Training] 3/6 [==============>...............] - ETA: 8s  loss: 360.6595 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 378.3652 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 365.1161 [Training] 6/6 [==============================] 2.6s/step  loss: 358.1313 [Training] 1/6 [====>.........................] - ETA: 23s  loss: 358.6648 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 364.9635 [Training] 3/6 [==============>...............] - ETA: 8s  loss: 353.7290 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 368.2623 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 380.8052 [Training] 6/6 [==============================] 2.5s/step  loss: 360.5395 [Training] 1/6 [====>.........................] - ETA: 23s  loss: 358.3420 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 360.4237 [Training] 3/6 [==============>...............] - ETA: 8s  loss: 362.1577 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 372.7583 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 373.8593 [Training] 6/6 [==============================] 2.6s/step  loss: 349.2171 [Training] 1/6 [====>.........................] - ETA: 23s  loss: 360.0683 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 358.9846 [Training] 3/6 [==============>...............] - ETA: 9s  loss: 372.0345 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 350.5299 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 370.5088 [Training] 6/6 [==============================] 2.6s/step  loss: 352.7091 [Training] 1/6 [====>.........................] - ETA: 23s  loss: 361.0727 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 356.2509 [Training] 3/6 [==============>...............] - ETA: 9s  loss: 353.8152 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 361.1578 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 354.5698 [Training] 6/6 [==============================] 2.5s/step  loss: 365.0168 [Training] 1/6 [====>.........................] - ETA: 24s  loss: 346.7788 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 349.8414 [Training] 3/6 [==============>...............] - ETA: 9s  loss: 346.8122 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 358.4901 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 370.3582 [Training] 6/6 [==============================] 2.6s/step  loss: 360.9027 [Training] 1/6 [====>.........................] - ETA: 23s  loss: 363.8018 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 351.5192 [Training] 3/6 [==============>...............] - ETA: 9s  loss: 341.6125 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 346.5882 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 349.0779 [Training] 6/6 [==============================] 2.6s/step  loss: 359.0503 [Training] 1/6 [====>.........................] - ETA: 23s  loss: 356.9707 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 339.0193 [Training] 3/6 [==============>...............] - ETA: 8s  loss: 345.0491 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 359.6841 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 341.3904 [Training] 6/6 [==============================] 2.6s/step  loss: 345.6542 [Training] 1/6 [====>.........................] - ETA: 24s  loss: 348.5046 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 344.0322 11/06/2020 18:01:18-INFO-root- 
+
+11/06/2020 18:01:35-INFO-root- 
+
+11/06/2020 18:01:52-INFO-root- 
+
+11/06/2020 18:02:09-INFO-root- 
+
+11/06/2020 18:02:26-INFO-root- 
+
+11/06/2020 18:02:42-INFO-root- 
+
+11/06/2020 18:02:59-INFO-root- 
+
+11/06/2020 18:03:16-INFO-root- 
+
+11/06/2020 18:03:33-INFO-root- 
+
+11/06/2020 18:03:49-INFO-root- 
+
+11/06/2020 18:04:06-INFO-root- 
+
+11/06/2020 18:04:23-INFO-root- 
+
+11/06/2020 18:04:40-INFO-root- 
+
+11/06/2020 18:04:56-INFO-root- 
+
+11/06/2020 18:05:13-INFO-root- 
+
+11/06/2020 18:05:30-INFO-root- 
+
+11/06/2020 18:05:46-INFO-root- 
+
+11/06/2020 18:06:03-INFO-root- 
+
+[Training] 3/6 [==============>...............] - ETA: 9s  loss: 333.5886 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 345.3597 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 342.9105 [Training] 6/6 [==============================] 2.5s/step  loss: 345.0920 [Training] 1/6 [====>.........................] - ETA: 24s  loss: 340.3967 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 342.8124 [Training] 3/6 [==============>...............] - ETA: 9s  loss: 335.2033 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 344.0055 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 328.9358 [Training] 6/6 [==============================] 2.6s/step  loss: 337.9630 [Training] 1/6 [====>.........................] - ETA: 24s  loss: 330.3113 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 323.2520 [Training] 3/6 [==============>...............] - ETA: 8s  loss: 334.1824 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 339.1162 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 330.0474 [Training] 6/6 [==============================] 2.6s/step  loss: 340.3423 [Training] 1/6 [====>.........................] - ETA: 23s  loss: 326.4960 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 329.1506 [Training] 3/6 [==============>...............] - ETA: 8s  loss: 315.1400 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 335.6343 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 320.2640 [Training] 6/6 [==============================] 2.5s/step  loss: 333.3844 [Training] 1/6 [====>.........................] - ETA: 23s  loss: 333.2478 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 330.1980 [Training] 3/6 [==============>...............] - ETA: 8s  loss: 318.4548 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 312.7513 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 308.3112 [Training] 6/6 [==============================] 2.5s/step  loss: 317.3687 [Training] 1/6 [====>.........................] - ETA: 23s  loss: 313.3141 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 312.1904 [Training] 3/6 [==============>...............] - ETA: 9s  loss: 315.6143 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 318.8679 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 309.5232 [Training] 6/6 [==============================] 2.6s/step  loss: 306.3529 [Training] 1/6 [====>.........................] - ETA: 23s  loss: 311.4143 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 304.7014 [Training] 3/6 [==============>...............] - ETA: 8s  loss: 309.8518 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 298.1354 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 299.6889 [Training] 6/6 [==============================] 2.6s/step  loss: 305.2592 [Training] 1/6 [====>.........................] - ETA: 23s  loss: 305.8754 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 287.1291 [Training] 3/6 [==============>...............] - ETA: 8s  loss: 301.4945 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 298.9641 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 296.7674 [Training] 6/6 [==============================] 2.5s/step  loss: 289.0100 [Training] 1/6 [====>.........................] - ETA: 23s  loss: 291.2297 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 285.5453 [Training] 3/6 [==============>...............] - ETA: 9s  loss: 293.0558 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 286.9092 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 277.1262 [Training] 6/6 [==============================] 2.6s/step  loss: 290.5028 [Training] 1/6 [====>.........................] - ETA: 23s  loss: 276.7204 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 288.9023 [Training] 3/6 [==============>...............] - ETA: 9s  loss: 273.6679 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 276.9763 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 274.7557 [Training] 6/6 [==============================] 2.5s/step  loss: 274.0388 [Training] 1/6 [====>.........................] - ETA: 23s  loss: 269.3014 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 261.9814 [Training] 3/6 [==============>...............] - ETA: 9s  loss: 273.3436 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 272.3471 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 262.7811 [Training] 6/6 [==============================] 2.6s/step  loss: 261.4272 [Training] 1/6 [====>.........................] - ETA: 23s  loss: 258.9972 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 256.9651 [Training] 3/6 [==============>...............] - ETA: 9s  loss: 257.9243 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 248.1098 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 262.6727 [Training] 6/6 [==============================] 2.6s/step  loss: 251.1621 [Training] 1/6 [====>.........................] - ETA: 24s  loss: 254.5429 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 246.9716 [Training] 3/6 [==============>...............] - ETA: 9s  loss: 250.3283 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 236.5368 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 233.7419 [Training] 6/6 [==============================] 2.6s/step  loss: 241.9991 [Training] 1/6 [====>.........................] - ETA: 24s  loss: 241.5884 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 234.1737 [Training] 3/6 [==============>...............] - ETA: 9s  loss: 231.0601 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 231.0217 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 229.6926 [Training] 6/6 [==============================] 2.6s/step  loss: 217.8056 [Training] 1/6 [====>.........................] - ETA: 24s  loss: 225.6211 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 219.6772 [Training] 3/6 [==============>...............] - ETA: 9s  loss: 217.2417 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 216.8311 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 216.3931 [Training] 6/6 [==============================] 2.6s/step  loss: 212.7601 [Training] 1/6 [====>.........................] - ETA: 23s  loss: 210.6116 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 206.9153 [Training] 3/6 [==============>...............] - ETA: 8s  loss: 205.2259 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 199.1142 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 197.8311 [Training] 6/6 [==============================] 2.6s/step  loss: 208.7690 [Training] 1/6 [====>.........................] - ETA: 23s  loss: 195.0508 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 200.0043 [Training] 3/6 [==============>...............] - ETA: 8s  loss: 186.8681 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 190.0914 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 186.8367 [Training] 6/6 [==============================] 2.5s/step  loss: 186.6967 [Training] 1/6 [====>.........................] - ETA: 24s  loss: 181.7018 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 182.1085 [Training] 3/6 [==============>...............] - ETA: 8s  loss: 175.9927 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 172.0337 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 176.6304 [Training] 6/6 [==============================] 2.5s/step  loss: 176.9012 [Training] 1/6 [====>.........................] - ETA: 24s  loss: 168.8919 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 168.6974 [Training] 3/6 [==============>...............] - ETA: 8s  loss: 163.5091 11/06/2020 18:06:20-INFO-root- 
+
+11/06/2020 18:06:37-INFO-root- 
+
+[Training] 4/6 [===================>..........] - ETA: 5s  loss: 171.5728 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 159.2605 [Training] 6/6 [==============================] 2.5s/step  loss: 158.7711 [Training] 1/6 [====>.........................] - ETA: 23s  loss: 154.6861 [Training] 2/6 [=========>....................] - ETA: 13s  loss: 153.1591 [Training] 3/6 [==============>...............] - ETA: 8s  loss: 155.5672 [Training] 4/6 [===================>..........] - ETA: 5s  loss: 148.0849 [Training] 5/6 [========================>.....] - ETA: 2s  loss: 154.9946 [Training] 6/6 [==============================] 2.5s/step  loss: 155.1987 Traceback (most recent call last):
+  File "run_ner_crf.py", line 559, in <module>
     main()
-  File "run_ner_crf.py", line 450, in main
-    raise ValueError("Task not found: %s" %(args.task_name))
-ValueError: Task not found: mininglamp
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:541: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  File "run_ner_crf.py", line 479, in main
+    global_step,tr_loss = train(args,train_dataset,model,tokenizer)
+  File "run_ner_crf.py", line 118, in train
+    outputs = model(**inputs)
+  File "/data1/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/data1/anaconda3/lib/python3.6/site-packages/torch/nn/parallel/data_parallel.py", line 152, in forward
+    outputs = self.parallel_apply(replicas, inputs, kwargs)
+  File "/data1/anaconda3/lib/python3.6/site-packages/torch/nn/parallel/data_parallel.py", line 162, in parallel_apply
+    return parallel_apply(replicas, inputs, kwargs, self.device_ids[:len(replicas)])
+  File "/data1/anaconda3/lib/python3.6/site-packages/torch/nn/parallel/parallel_apply.py", line 85, in parallel_apply
+    output.reraise()
+  File "/data1/anaconda3/lib/python3.6/site-packages/torch/_utils.py", line 394, in reraise
+    raise self.exc_type(msg)
+RuntimeError: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data1/anaconda3/lib/python3.6/site-packages/torch/nn/parallel/parallel_apply.py", line 60, in _worker
+    output = module(*input, **kwargs)
+  File "/data1/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/data2/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/models/bert_for_ner.py", line 20, in forward
+    outputs = self.bert(input_ids=input_ids,attention_mask= attention_mask,token_type_ids=token_type_ids)
+  File "/data1/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/data1/anaconda3/lib/python3.6/site-packages/transformers/modeling_bert.py", line 762, in forward
+    output_hidden_states=output_hidden_states,
+  File "/data1/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/data1/anaconda3/lib/python3.6/site-packages/transformers/modeling_bert.py", line 439, in forward
+    output_attentions,
+  File "/data1/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/data1/anaconda3/lib/python3.6/site-packages/transformers/modeling_bert.py", line 371, in forward
+    hidden_states, attention_mask, head_mask, output_attentions=output_attentions,
+  File "/data1/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/data1/anaconda3/lib/python3.6/site-packages/transformers/modeling_bert.py", line 315, in forward
+    hidden_states, attention_mask, head_mask, encoder_hidden_states, encoder_attention_mask, output_attentions,
+  File "/data1/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/data1/anaconda3/lib/python3.6/site-packages/transformers/modeling_bert.py", line 258, in forward
+    context_layer = context_layer.permute(0, 2, 1, 3).contiguous()
+RuntimeError: CUDA out of memory. Tried to allocate 12.00 MiB (GPU 0; 10.73 GiB total capacity; 4.47 GiB already allocated; 4.56 MiB free; 4.52 GiB reserved in total by PyTorch)
+
+/data1/anaconda3/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:523: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
   _np_qint8 = np.dtype([("qint8", np.int8, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:542: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+/data1/anaconda3/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:524: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
   _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:543: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+/data1/anaconda3/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
   _np_qint16 = np.dtype([("qint16", np.int16, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:544: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+/data1/anaconda3/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
   _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:545: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+/data1/anaconda3/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
   _np_qint32 = np.dtype([("qint32", np.int32, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:550: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+/data1/anaconda3/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:532: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
   np_resource = np.dtype([("resource", np.ubyte, 1)])
-11/05/2020 16:21:51-WARNING-root- Process rank: -1,device: cuda ,n_gpus: 10,distributed training: False,16-bits training: False
-Calling CNerTokenizer.from_pretrained() with the path to a single file or url is deprecated
+11/06/2020 18:48:51-WARNING-root- Process rank: -1,device: cuda ,n_gpus: 10,distributed training: False,16-bits training: False
+11/06/2020 18:48:51-INFO-transformers.configuration_utils- loading configuration file /home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base/bert_config.json
+11/06/2020 18:48:51-INFO-transformers.configuration_utils- Model config BertConfig {
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1",
+    "2": "LABEL_2",
+    "3": "LABEL_3",
+    "4": "LABEL_4",
+    "5": "LABEL_5",
+    "6": "LABEL_6",
+    "7": "LABEL_7",
+    "8": "LABEL_8",
+    "9": "LABEL_9",
+    "10": "LABEL_10",
+    "11": "LABEL_11",
+    "12": "LABEL_12",
+    "13": "LABEL_13",
+    "14": "LABEL_14",
+    "15": "LABEL_15",
+    "16": "LABEL_16",
+    "17": "LABEL_17",
+    "18": "LABEL_18",
+    "19": "LABEL_19",
+    "20": "LABEL_20",
+    "21": "LABEL_21",
+    "22": "LABEL_22",
+    "23": "LABEL_23",
+    "24": "LABEL_24",
+    "25": "LABEL_25",
+    "26": "LABEL_26",
+    "27": "LABEL_27",
+    "28": "LABEL_28",
+    "29": "LABEL_29",
+    "30": "LABEL_30",
+    "31": "LABEL_31",
+    "32": "LABEL_32",
+    "33": "LABEL_33",
+    "34": "LABEL_34",
+    "35": "LABEL_35"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1,
+    "LABEL_10": 10,
+    "LABEL_11": 11,
+    "LABEL_12": 12,
+    "LABEL_13": 13,
+    "LABEL_14": 14,
+    "LABEL_15": 15,
+    "LABEL_16": 16,
+    "LABEL_17": 17,
+    "LABEL_18": 18,
+    "LABEL_19": 19,
+    "LABEL_2": 2,
+    "LABEL_20": 20,
+    "LABEL_21": 21,
+    "LABEL_22": 22,
+    "LABEL_23": 23,
+    "LABEL_24": 24,
+    "LABEL_25": 25,
+    "LABEL_26": 26,
+    "LABEL_27": 27,
+    "LABEL_28": 28,
+    "LABEL_29": 29,
+    "LABEL_3": 3,
+    "LABEL_30": 30,
+    "LABEL_31": 31,
+    "LABEL_32": 32,
+    "LABEL_33": 33,
+    "LABEL_34": 34,
+    "LABEL_35": 35,
+    "LABEL_4": 4,
+    "LABEL_5": 5,
+    "LABEL_6": 6,
+    "LABEL_7": 7,
+    "LABEL_8": 8,
+    "LABEL_9": 9
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "type_vocab_size": 2,
+  "vocab_size": 21128
+}
+
+11/06/2020 18:48:51-INFO-transformers.tokenization_utils_base- Model name '/home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base/vocab.txt' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased, TurkuNLP/bert-base-finnish-cased-v1, TurkuNLP/bert-base-finnish-uncased-v1, wietsedv/bert-base-dutch-cased). Assuming '/home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base/vocab.txt' is a path, a model identifier, or url to a directory containing tokenizer files.
+11/06/2020 18:48:51-WARNING-transformers.tokenization_utils_base- Calling CNerTokenizer.from_pretrained() with the path to a single file or url is deprecated
+11/06/2020 18:48:51-INFO-transformers.tokenization_utils_base- loading file /home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base/vocab.txt
+11/06/2020 18:48:51-INFO-transformers.modeling_utils- loading weights file /home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base/pytorch_model.bin
+11/06/2020 18:48:54-WARNING-transformers.modeling_utils- Some weights of the model checkpoint at /home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base were not used when initializing BertCrfForNer: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias']
+- This IS expected if you are initializing BertCrfForNer from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPretraining model).
+- This IS NOT expected if you are initializing BertCrfForNer from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+11/06/2020 18:48:54-WARNING-transformers.modeling_utils- Some weights of BertCrfForNer were not initialized from the model checkpoint at /home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base and are newly initialized: ['classifier.weight', 'classifier.bias', 'crf.start_transitions', 'crf.end_transitions', 'crf.transitions']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+11/06/2020 18:48:58-INFO-root- Training/evaluation parameters Namespace(adam_epsilon=1e-08, adv_epsilon=1.0, adv_name='word_embeddings', cache_dir='', config_name='/home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base/bert_config.json', crf_learning_rate=0.005, data_dir='/home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/data/mininglamp/', device=device(type='cuda'), do_adv=False, do_eval=True, do_lower_case=True, do_predict=False, do_train=True, eval_all_checkpoints=False, eval_max_seq_length=512, evaluate_during_training=False, fp16=False, fp16_opt_leval='01', gradient_accumulation_steps=1, id2label={0: 'X', 1: 'B-EMAIL', 2: 'B-SCENE', 3: 'B-NAME', 4: 'I-MOBILE', 5: 'I-POSITION', 6: 'B-BOOK', 7: 'B-ORGANIZATION', 8: 'I-MOVIE', 9: 'B-MOBILE', 10: 'I-COMPANY', 11: 'I-SCENE', 12: 'I-EMAIL', 13: 'B-POSITION', 14: 'B-QQ', 15: 'B-GOVERNMENT', 16: 'B-COMPANY', 17: 'S-MOVIE', 18: 'I-BOOK', 19: 'I-ORGANIZATION', 20: 'S-NAME', 21: 'B-ADDRESS', 22: 'I-GOVERNMENT', 23: 'I-GAME', 24: 'S-COMPANY', 25: 'B-VX', 26: 'I-NAME', 27: 'B-GAME', 28: 'I-ADDRESS', 29: 'B-MOVIE', 30: 'S-ADDRESS', 31: 'I-QQ', 32: 'I-VX', 33: '[START]', 34: '[END]', 35: 'O'}, label2id={'X': 0, 'B-EMAIL': 1, 'B-SCENE': 2, 'B-NAME': 3, 'I-MOBILE': 4, 'I-POSITION': 5, 'B-BOOK': 6, 'B-ORGANIZATION': 7, 'I-MOVIE': 8, 'B-MOBILE': 9, 'I-COMPANY': 10, 'I-SCENE': 11, 'I-EMAIL': 12, 'B-POSITION': 13, 'B-QQ': 14, 'B-GOVERNMENT': 15, 'B-COMPANY': 16, 'S-MOVIE': 17, 'I-BOOK': 18, 'I-ORGANIZATION': 19, 'S-NAME': 20, 'B-ADDRESS': 21, 'I-GOVERNMENT': 22, 'I-GAME': 23, 'S-COMPANY': 24, 'B-VX': 25, 'I-NAME': 26, 'B-GAME': 27, 'I-ADDRESS': 28, 'B-MOVIE': 29, 'S-ADDRESS': 30, 'I-QQ': 31, 'I-VX': 32, '[START]': 33, '[END]': 34, 'O': 35}, learning_rate=5e-05, local_rank=-1, logging_steps=448, loss_type='ce', markup='bios', max_grad_norm=1.0, max_steps=-1, model_name_or_path='/home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base', model_type='bert', n_gpu=10, no_cuda=False, num_train_epochs=80.0, output_dir='/home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/outputs/mininglamp_output/bert', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=24, per_gpu_train_batch_size=24, predict_checkpoints=0, save_steps=448, seed=42, server_ip='', server_port='', task_name='mininglamp', tokenizer_name='/home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/bert-base/vocab.txt', train_max_seq_length=128, warmup_proportion=0.1, weight_decay=0.01)
+11/06/2020 18:48:58-INFO-root- Loading features from cache file /home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/data/mininglamp/cache_crf-train_bert-base_128_mininglamp
+/data1/anaconda3/lib/python3.6/site-packages/torch/nn/parallel/_functions.py:61: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+11/06/2020 18:49:56-INFO-root- 
+
+11/06/2020 18:50:16-INFO-root- 
+
+11/06/2020 18:50:36-INFO-root- 
+
+11/06/2020 18:50:55-INFO-root- 
+
+11/06/2020 18:51:15-INFO-root- 
+
+11/06/2020 18:51:35-INFO-root- 
+
+{
+  "input_ids": [
+    101,
+    3152,
+    1265,
+    1158,
+    2692,
+    510,
+    7770,
+    4999,
+    828,
+    7312,
+    2428,
+    969,
+    5023,
+    6436,
+    1914,
+    7770,
+    4999,
+    689,
+    2578,
+    8024,
+    1762,
+    679,
+    719,
+    2199,
+    3341,
+    8024,
+    4242,
+    6946,
+    1277,
+    1818,
+    1079,
+    2199,
+    3869,
+    4385,
+    5661,
+    1921,
+    4906,
+    2825,
+    704,
+    2552,
+    510,
+    1922,
+    4958,
+    860,
+    7741,
+    1825,
+    1765,
+    510,
+    2190,
+    754,
+    1920,
+    1914,
+    3144,
+    7795,
+    1077,
+    4263,
+    1962,
+    5442,
+    3341,
+    6432,
+    8024,
+    2769,
+    6230,
+    2533,
+    2496,
+    872,
+    1762,
+    1068,
+    3800,
+    4510,
+    2094,
+    4993,
+    2825,
+    4638,
+    3198,
+    952,
+    8024,
+    872,
+    2218,
+    3221,
+    1762,
+    3118,
+    2898,
+    4510,
+    2094,
+    4993,
+    2825,
+    8013,
+    102,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "input_len": 89,
+  "input_mask": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "label_ids": [
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    21,
+    28,
+    28,
+    28,
+    35,
+    35,
+    35,
+    35,
+    16,
+    10,
+    10,
+    10,
+    10,
+    10,
+    35,
+    2,
+    11,
+    11,
+    11,
+    11,
+    11,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    27,
+    23,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "segment_id": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ]
+}
+
+[Training] 1/8 [==>...........................] - ETA: 4:59  loss: 381.1153 [Training] 2/8 [======>.......................] - ETA: 2:15  loss: 375.8432 [Training] 3/8 [==========>...................] - ETA: 1:18  loss: 349.8849 [Training] 4/8 [==============>...............] - ETA: 49s  loss: 372.5063 [Training] 5/8 [=================>............] - ETA: 30s  loss: 377.3254 [Training] 6/8 [=====================>........] - ETA: 17s  loss: 348.1256 [Training] 7/8 [=========================>....] - ETA: 7s  loss: 355.6759 [Training] 8/8 [==============================] 7.2s/step  loss: 363.3624 [Training] 1/8 [==>...........................] - ETA: 28s  loss: 361.5786 [Training] 2/8 [======>.......................] - ETA: 18s  loss: 371.1451 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 362.3921 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 357.3866 [Training] 5/8 [=================>............] - ETA: 7s  loss: 376.4285 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 368.2681 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 364.4937 [Training] 8/8 [==============================] 2.3s/step  loss: 358.3979 [Training] 1/8 [==>...........................] - ETA: 29s  loss: 357.6282 [Training] 2/8 [======>.......................] - ETA: 18s  loss: 360.1339 [Training] 3/8 [==========>...................] - ETA: 13s  loss: 367.1689 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 347.3203 [Training] 5/8 [=================>............] - ETA: 7s  loss: 365.9205 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 378.3952 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 373.9059 [Training] 8/8 [==============================] 2.3s/step  loss: 355.8288 [Training] 1/8 [==>...........................] - ETA: 28s  loss: 352.6844 [Training] 2/8 [======>.......................] - ETA: 18s  loss: 352.7195 [Training] 3/8 [==========>...................] - ETA: 13s  loss: 374.6937 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 353.8079 [Training] 5/8 [=================>............] - ETA: 7s  loss: 372.6229 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 368.8303 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 357.2790 [Training] 8/8 [==============================] 2.3s/step  loss: 351.7405 [Training] 1/8 [==>...........................] - ETA: 28s  loss: 354.2330 [Training] 2/8 [======>.......................] - ETA: 18s  loss: 363.3893 [Training] 3/8 [==========>...................] - ETA: 13s  loss: 348.6680 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 374.7934 [Training] 5/8 [=================>............] - ETA: 7s  loss: 346.6950 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 358.4543 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 361.3405 [Training] 8/8 [==============================] 2.3s/step  loss: 347.7759 [Training] 1/8 [==>...........................] - ETA: 29s  loss: 351.5372 [Training] 2/8 [======>.......................] - ETA: 18s  loss: 355.1259 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 350.9778 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 349.1383 [Training] 5/8 [=================>............] - ETA: 7s  loss: 348.9011 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 356.7180 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 350.6562 [Training] 8/8 [==============================] 2.3s/step  loss: 358.5563 [Training] 1/8 [==>...........................] - ETA: 28s  loss: 340.1521 [Training] 2/8 [======>.......................] - ETA: 18s  loss: 334.9585 [Training] 3/8 [==========>...................] - ETA: 13s  loss: 351.7493 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 334.0203 [Training] 5/8 [=================>............] - ETA: 7s  loss: 350.9936 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 352.1231 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 353.2406 [Training] 8/8 [==============================] 2.4s/step  loss: 361.8775 11/06/2020 18:51:55-INFO-root- 
+
+11/06/2020 18:52:14-INFO-root- 
+
+11/06/2020 18:52:34-INFO-root- 
+
+11/06/2020 18:52:54-INFO-root- 
+
+11/06/2020 18:53:14-INFO-root- 
+
+11/06/2020 18:53:34-INFO-root- 
+
+11/06/2020 18:53:55-INFO-root- 
+
+11/06/2020 18:54:15-INFO-root- 
+
+11/06/2020 18:54:36-INFO-root- 
+
+11/06/2020 18:54:56-INFO-root- 
+
+11/06/2020 18:55:16-INFO-root- 
+
+11/06/2020 18:55:37-INFO-root- 
+
+11/06/2020 18:55:58-INFO-root- 
+
+11/06/2020 18:56:18-INFO-root- 
+
+[Training] 1/8 [==>...........................] - ETA: 28s  loss: 349.7076 [Training] 2/8 [======>.......................] - ETA: 18s  loss: 345.7478 [Training] 3/8 [==========>...................] - ETA: 13s  loss: 349.2950 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 323.9339 [Training] 5/8 [=================>............] - ETA: 7s  loss: 339.1286 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 328.8512 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 347.6480 [Training] 8/8 [==============================] 2.3s/step  loss: 344.2924 [Training] 1/8 [==>...........................] - ETA: 27s  loss: 340.2017 [Training] 2/8 [======>.......................] - ETA: 17s  loss: 340.0221 [Training] 3/8 [==========>...................] - ETA: 13s  loss: 319.7590 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 335.6239 [Training] 5/8 [=================>............] - ETA: 7s  loss: 340.9525 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 333.5336 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 334.3138 [Training] 8/8 [==============================] 2.3s/step  loss: 325.1910 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 336.1567 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 329.9196 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 318.6025 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 317.2975 [Training] 5/8 [=================>............] - ETA: 7s  loss: 321.8039 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 337.0812 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 324.3213 [Training] 8/8 [==============================] 2.3s/step  loss: 317.3333 [Training] 1/8 [==>...........................] - ETA: 32s  loss: 313.8194 [Training] 2/8 [======>.......................] - ETA: 20s  loss: 327.2666 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 315.9338 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 318.1002 [Training] 5/8 [=================>............] - ETA: 7s  loss: 326.2545 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 303.1329 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 317.0258 [Training] 8/8 [==============================] 2.4s/step  loss: 309.0916 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 309.3928 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 300.5977 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 297.7621 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 310.2838 [Training] 5/8 [=================>............] - ETA: 7s  loss: 313.0230 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 304.6178 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 302.9629 [Training] 8/8 [==============================] 2.4s/step  loss: 315.6110 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 293.3311 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 305.6153 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 295.1996 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 281.7495 [Training] 5/8 [=================>............] - ETA: 7s  loss: 302.0681 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 294.2373 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 290.2063 [Training] 8/8 [==============================] 2.4s/step  loss: 298.0779 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 302.6540 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 291.1301 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 288.2238 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 282.4033 [Training] 5/8 [=================>............] - ETA: 7s  loss: 270.7730 [Training] 6/8 [=====================>........] - ETA: 5s  loss: 284.0695 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 266.6407 [Training] 8/8 [==============================] 2.4s/step  loss: 278.3203 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 270.6056 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 270.1180 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 273.1690 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 273.9865 [Training] 5/8 [=================>............] - ETA: 7s  loss: 277.8534 [Training] 6/8 [=====================>........] - ETA: 5s  loss: 255.8416 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 270.4129 [Training] 8/8 [==============================] 2.4s/step  loss: 261.8206 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 269.9477 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 239.6384 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 267.4863 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 260.6599 [Training] 5/8 [=================>............] - ETA: 7s  loss: 245.1400 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 253.6172 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 241.8105 [Training] 8/8 [==============================] 2.4s/step  loss: 257.9467 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 249.4395 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 239.5404 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 235.7765 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 243.5461 [Training] 5/8 [=================>............] - ETA: 7s  loss: 234.9146 [Training] 6/8 [=====================>........] - ETA: 5s  loss: 240.4783 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 235.3781 [Training] 8/8 [==============================] 2.4s/step  loss: 228.8004 [Training] 1/8 [==>...........................] - ETA: 32s  loss: 232.4696 [Training] 2/8 [======>.......................] - ETA: 20s  loss: 222.3649 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 221.6960 [Training] 4/8 [==============>...............] - ETA: 11s  loss: 224.7137 [Training] 5/8 [=================>............] - ETA: 7s  loss: 220.4562 [Training] 6/8 [=====================>........] - ETA: 5s  loss: 220.8210 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 206.6223 [Training] 8/8 [==============================] 2.5s/step  loss: 221.2938 [Training] 1/8 [==>...........................] - ETA: 31s  loss: 202.7897 [Training] 2/8 [======>.......................] - ETA: 20s  loss: 218.2036 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 208.3459 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 199.6766 [Training] 5/8 [=================>............] - ETA: 7s  loss: 206.8720 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 202.4031 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 196.2841 [Training] 8/8 [==============================] 2.4s/step  loss: 192.7175 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 192.8193 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 184.2481 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 179.9190 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 193.8956 [Training] 5/8 [=================>............] - ETA: 7s  loss: 186.9943 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 188.8287 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 177.6952 [Training] 8/8 [==============================] 2.4s/step  loss: 178.5513 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 172.0952 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 169.2323 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 169.8515 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 172.8020 [Training] 5/8 [=================>............] - ETA: 7s  loss: 159.8538 11/06/2020 18:56:38-INFO-root- 
+
+11/06/2020 18:56:59-INFO-root- 
+
+11/06/2020 18:57:19-INFO-root- 
+
+11/06/2020 18:57:39-INFO-root- 
+
+11/06/2020 18:58:00-INFO-root- 
+
+11/06/2020 18:58:20-INFO-root- 
+
+11/06/2020 18:58:41-INFO-root- 
+
+11/06/2020 18:59:01-INFO-root- 
+
+11/06/2020 18:59:22-INFO-root- 
+
+11/06/2020 18:59:43-INFO-root- 
+
+11/06/2020 19:00:03-INFO-root- 
+
+11/06/2020 19:00:23-INFO-root- 
+
+11/06/2020 19:00:44-INFO-root- 
+
+11/06/2020 19:01:04-INFO-root- 
+
+[Training] 6/8 [=====================>........] - ETA: 4s  loss: 171.3409 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 165.3840 [Training] 8/8 [==============================] 2.4s/step  loss: 163.9884 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 160.2919 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 160.9940 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 159.7639 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 153.8128 [Training] 5/8 [=================>............] - ETA: 7s  loss: 152.0928 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 144.9507 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 145.4559 [Training] 8/8 [==============================] 2.4s/step  loss: 147.1088 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 151.4290 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 142.6120 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 146.9444 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 133.8398 [Training] 5/8 [=================>............] - ETA: 7s  loss: 138.4566 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 139.7795 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 138.0621 [Training] 8/8 [==============================] 2.4s/step  loss: 134.9533 [Training] 1/8 [==>...........................] - ETA: 31s  loss: 133.6388 [Training] 2/8 [======>.......................] - ETA: 20s  loss: 138.5451 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 126.4261 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 132.8947 [Training] 5/8 [=================>............] - ETA: 7s  loss: 130.2185 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 127.2619 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 132.6879 [Training] 8/8 [==============================] 2.4s/step  loss: 126.5733 [Training] 1/8 [==>...........................] - ETA: 29s  loss: 126.4321 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 125.7319 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 119.3643 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 126.3165 [Training] 5/8 [=================>............] - ETA: 7s  loss: 116.2010 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 115.9958 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 121.1176 [Training] 8/8 [==============================] 2.4s/step  loss: 128.1294 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 115.0331 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 119.6679 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 113.6968 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 112.0416 [Training] 5/8 [=================>............] - ETA: 7s  loss: 112.9305 [Training] 6/8 [=====================>........] - ETA: 5s  loss: 114.0092 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 111.8899 [Training] 8/8 [==============================] 2.4s/step  loss: 112.6731 [Training] 1/8 [==>...........................] - ETA: 31s  loss: 108.5048 [Training] 2/8 [======>.......................] - ETA: 20s  loss: 108.5489 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 110.2999 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 104.8584 [Training] 5/8 [=================>............] - ETA: 7s  loss: 102.6995 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 109.9184 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 105.0890 [Training] 8/8 [==============================] 2.4s/step  loss: 107.3391 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 101.7373 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 101.8176 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 104.3767 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 97.5246 [Training] 5/8 [=================>............] - ETA: 7s  loss: 106.1938 [Training] 6/8 [=====================>........] - ETA: 5s  loss: 97.3074 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 96.6561 [Training] 8/8 [==============================] 2.4s/step  loss: 96.7014 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 94.4548 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 92.1675 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 94.0480 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 94.2862 [Training] 5/8 [=================>............] - ETA: 7s  loss: 87.7786 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 95.1682 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 95.0477 [Training] 8/8 [==============================] 2.4s/step  loss: 96.3351 [Training] 1/8 [==>...........................] - ETA: 31s  loss: 93.1547 [Training] 2/8 [======>.......................] - ETA: 20s  loss: 90.4221 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 89.5575 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 85.2536 [Training] 5/8 [=================>............] - ETA: 7s  loss: 83.0488 [Training] 6/8 [=====================>........] - ETA: 5s  loss: 86.2704 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 86.1219 [Training] 8/8 [==============================] 2.5s/step  loss: 85.3845 [Training] 1/8 [==>...........................] - ETA: 31s  loss: 86.6701 [Training] 2/8 [======>.......................] - ETA: 20s  loss: 85.2921 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 80.5304 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 78.5956 [Training] 5/8 [=================>............] - ETA: 7s  loss: 78.0147 [Training] 6/8 [=====================>........] - ETA: 5s  loss: 81.5330 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 81.1050 [Training] 8/8 [==============================] 2.4s/step  loss: 79.3845 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 76.0955 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 79.0757 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 75.4155 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 78.7093 [Training] 5/8 [=================>............] - ETA: 7s  loss: 75.4546 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 76.8194 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 70.5801 [Training] 8/8 [==============================] 2.4s/step  loss: 75.2157 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 71.4674 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 74.7030 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 67.5189 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 70.4712 [Training] 5/8 [=================>............] - ETA: 7s  loss: 72.9707 [Training] 6/8 [=====================>........] - ETA: 5s  loss: 69.3364 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 70.1051 [Training] 8/8 [==============================] 2.4s/step  loss: 68.6251 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 67.0225 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 65.7325 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 62.7654 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 69.1552 [Training] 5/8 [=================>............] - ETA: 7s  loss: 68.3745 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 63.2294 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 67.0210 [Training] 8/8 [==============================] 2.4s/step  loss: 63.4263 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 66.2050 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 59.5489 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 63.8665 11/06/2020 19:01:25-INFO-root- 
+
+11/06/2020 19:01:45-INFO-root- 
+
+11/06/2020 19:02:06-INFO-root- 
+
+11/06/2020 19:02:26-INFO-root- 
+
+11/06/2020 19:02:47-INFO-root- 
+
+11/06/2020 19:03:07-INFO-root- 
+
+11/06/2020 19:03:28-INFO-root- 
+
+11/06/2020 19:03:48-INFO-root- 
+
+11/06/2020 19:04:08-INFO-root- 
+
+11/06/2020 19:04:29-INFO-root- 
+
+11/06/2020 19:04:49-INFO-root- 
+
+11/06/2020 19:05:10-INFO-root- 
+
+11/06/2020 19:05:30-INFO-root- 
+
+11/06/2020 19:05:51-INFO-root- 
+
+[Training] 4/8 [==============>...............] - ETA: 10s  loss: 63.8348 [Training] 5/8 [=================>............] - ETA: 7s  loss: 63.3917 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 56.9156 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 58.4922 [Training] 8/8 [==============================] 2.4s/step  loss: 60.4781 [Training] 1/8 [==>...........................] - ETA: 31s  loss: 59.4662 [Training] 2/8 [======>.......................] - ETA: 20s  loss: 59.4876 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 55.5444 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 57.3249 [Training] 5/8 [=================>............] - ETA: 7s  loss: 61.6047 [Training] 6/8 [=====================>........] - ETA: 5s  loss: 55.9929 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 53.5002 [Training] 8/8 [==============================] 2.4s/step  loss: 57.4118 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 53.1456 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 57.5860 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 53.6669 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 53.0802 [Training] 5/8 [=================>............] - ETA: 7s  loss: 53.9007 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 58.3490 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 53.1871 [Training] 8/8 [==============================] 2.4s/step  loss: 50.1918 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 51.1583 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 51.4728 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 49.8457 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 53.0546 [Training] 5/8 [=================>............] - ETA: 7s  loss: 48.2179 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 49.6917 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 53.6703 [Training] 8/8 [==============================] 2.4s/step  loss: 52.1950 [Training] 1/8 [==>...........................] - ETA: 31s  loss: 50.9973 [Training] 2/8 [======>.......................] - ETA: 20s  loss: 50.0295 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 48.9492 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 49.3518 [Training] 5/8 [=================>............] - ETA: 7s  loss: 46.9585 [Training] 6/8 [=====================>........] - ETA: 5s  loss: 48.5369 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 47.5712 [Training] 8/8 [==============================] 2.4s/step  loss: 45.3800 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 48.9034 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 47.7503 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 49.3905 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 45.9573 [Training] 5/8 [=================>............] - ETA: 7s  loss: 42.5377 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 40.8409 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 47.2582 [Training] 8/8 [==============================] 2.4s/step  loss: 45.7148 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 42.3321 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 47.1514 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 43.4333 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 46.6340 [Training] 5/8 [=================>............] - ETA: 7s  loss: 43.4619 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 42.7883 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 42.9688 [Training] 8/8 [==============================] 2.4s/step  loss: 43.6752 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 43.3012 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 40.5771 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 42.8158 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 45.6605 [Training] 5/8 [=================>............] - ETA: 7s  loss: 39.7739 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 41.8517 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 42.5102 [Training] 8/8 [==============================] 2.4s/step  loss: 42.3055 [Training] 1/8 [==>...........................] - ETA: 29s  loss: 43.6308 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 44.1635 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 38.5385 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 37.9594 [Training] 5/8 [=================>............] - ETA: 7s  loss: 39.3338 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 43.9038 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 35.4319 [Training] 8/8 [==============================] 2.4s/step  loss: 41.6779 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 40.6469 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 37.9083 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 37.8656 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 41.7279 [Training] 5/8 [=================>............] - ETA: 7s  loss: 38.0868 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 37.8148 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 38.6542 [Training] 8/8 [==============================] 2.4s/step  loss: 40.1684 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 38.0216 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 36.3462 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 36.4885 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 37.1964 [Training] 5/8 [=================>............] - ETA: 7s  loss: 37.7831 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 36.6310 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 37.7850 [Training] 8/8 [==============================] 2.4s/step  loss: 41.2399 [Training] 1/8 [==>...........................] - ETA: 31s  loss: 39.4418 [Training] 2/8 [======>.......................] - ETA: 20s  loss: 37.9216 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 36.7661 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 36.9062 [Training] 5/8 [=================>............] - ETA: 7s  loss: 36.5198 [Training] 6/8 [=====================>........] - ETA: 5s  loss: 34.3934 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 37.2819 [Training] 8/8 [==============================] 2.4s/step  loss: 34.4091 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 36.4737 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 35.8972 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 36.3557 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 36.7529 [Training] 5/8 [=================>............] - ETA: 7s  loss: 34.5024 [Training] 6/8 [=====================>........] - ETA: 5s  loss: 33.5936 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 34.1865 [Training] 8/8 [==============================] 2.4s/step  loss: 36.4210 [Training] 1/8 [==>...........................] - ETA: 31s  loss: 36.4548 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 32.0447 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 35.9482 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 34.3510 [Training] 5/8 [=================>............] - ETA: 7s  loss: 33.1498 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 31.7475 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 36.3818 [Training] 8/8 [==============================] 2.4s/step  loss: 36.0747 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 34.8795 11/06/2020 19:06:11-INFO-root- 
+
+11/06/2020 19:06:31-INFO-root- 
+
+11/06/2020 19:06:52-INFO-root- 
+
+11/06/2020 19:07:12-INFO-root- 
+
+11/06/2020 19:07:32-INFO-root- 
+
+11/06/2020 19:07:53-INFO-root- 
+
+11/06/2020 19:08:13-INFO-root- 
+
+11/06/2020 19:08:33-INFO-root- Loading features from cache file /home/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/data/mininglamp/cache_crf-dev_bert-base_512_mininglamp
+[Training] 2/8 [======>.......................] - ETA: 19s  loss: 33.4086 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 32.6777 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 34.3775 [Training] 5/8 [=================>............] - ETA: 7s  loss: 34.0124 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 34.0840 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 34.1603 [Training] 8/8 [==============================] 2.4s/step  loss: 31.6810 [Training] 1/8 [==>...........................] - ETA: 29s  loss: 32.8115 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 35.6106 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 32.2345 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 33.3732 [Training] 5/8 [=================>............] - ETA: 7s  loss: 33.0761 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 33.1597 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 30.7812 [Training] 8/8 [==============================] 2.4s/step  loss: 31.4775 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 31.2251 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 31.0423 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 33.2194 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 33.9186 [Training] 5/8 [=================>............] - ETA: 7s  loss: 31.7652 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 30.5645 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 30.9555 [Training] 8/8 [==============================] 2.4s/step  loss: 33.5613 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 31.6999 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 31.6310 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 30.9834 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 31.8150 [Training] 5/8 [=================>............] - ETA: 7s  loss: 30.6866 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 31.2239 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 30.3695 [Training] 8/8 [==============================] 2.4s/step  loss: 30.7328 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 31.3942 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 28.5445 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 29.5125 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 29.3642 [Training] 5/8 [=================>............] - ETA: 7s  loss: 30.2679 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 29.1906 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 32.4802 [Training] 8/8 [==============================] 2.4s/step  loss: 33.3931 [Training] 1/8 [==>...........................] - ETA: 32s  loss: 30.2331 [Training] 2/8 [======>.......................] - ETA: 20s  loss: 30.1018 [Training] 3/8 [==========>...................] - ETA: 15s  loss: 28.7229 [Training] 4/8 [==============>...............] - ETA: 11s  loss: 27.8160 [Training] 5/8 [=================>............] - ETA: 7s  loss: 28.5007 [Training] 6/8 [=====================>........] - ETA: 5s  loss: 29.5210 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 33.5779 [Training] 8/8 [==============================] 2.4s/step  loss: 29.1185 [Training] 1/8 [==>...........................] - ETA: 30s  loss: 30.5063 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 28.5893 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 29.0309 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 30.0253 [Training] 5/8 [=================>............] - ETA: 7s  loss: 27.5374 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 29.3998 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 29.9693 [Training] 8/8 [==============================] 2.4s/step  loss: 27.1932 [Training] 1/8 [==>...........................] - ETA: 29s  loss: 30.6158 [Training] 2/8 [======>.......................] - ETA: 19s  loss: 28.8835 [Training] 3/8 [==========>...................] - ETA: 14s  loss: 30.2433 [Training] 4/8 [==============>...............] - ETA: 10s  loss: 29.7289 [Training] 5/8 [=================>............] - ETA: 7s  loss: 28.0056 [Training] 6/8 [=====================>........] - ETA: 4s  loss: 25.9632 [Training] 7/8 [=========================>....] - ETA: 2s  loss: 28.2625 [Training] 8/8 [==============================] 2.4s/step  loss: 25.5548  
+{
+  "input_ids": [
+    101,
+    517,
+    6579,
+    2791,
+    2900,
+    1298,
+    7151,
+    518,
+    5143,
+    1154,
+    6393,
+    6448,
+    8038,
+    517,
+    6205,
+    4408,
+    4280,
+    5632,
+    7730,
+    3122,
+    4526,
+    1920,
+    4636,
+    4906,
+    518,
+    8024,
+    5543,
+    1916,
+    6237,
+    5031,
+    872,
+    4638,
+    7309,
+    7579,
+    511,
+    102,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "input_len": 36,
+  "input_mask": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "label_ids": [
+    35,
+    6,
+    18,
+    18,
+    18,
+    18,
+    18,
+    18,
+    35,
+    35,
+    35,
+    35,
+    35,
+    6,
+    18,
+    18,
+    18,
+    18,
+    18,
+    18,
+    18,
+    18,
+    18,
+    18,
+    18,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    35,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "segment_id": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ]
+}
+11/06/2020 19:08:33-INFO-root- ***** Running evaluation  *****
+11/06/2020 19:08:33-INFO-root-   Num examples = 628
+11/06/2020 19:08:33-INFO-root-   Batch size = 240
+
 Traceback (most recent call last):
-  File "run_ner_crf.py", line 566, in <module>
+  File "run_ner_crf.py", line 559, in <module>
     main()
-  File "run_ner_crf.py", line 471, in main
-    do_lower_case=args.do_lower_case,cache_dir=args.cache_dir if args.cache_dir else None
-  File "/data1/anaconda3/lib/python3.6/site-packages/transformers/tokenization_utils_base.py", line 1602, in from_pretrained
-    resolved_vocab_files, pretrained_model_name_or_path, init_configuration, *init_inputs, **kwargs
-  File "/data1/anaconda3/lib/python3.6/site-packages/transformers/tokenization_utils_base.py", line 1674, in _from_pretrained
-    tokenizer = cls(*init_inputs, **init_kwargs)
-TypeError: __init__() got an unexpected keyword argument 'name_or_path'
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:541: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:542: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:543: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:544: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:545: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:550: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  np_resource = np.dtype([("resource", np.ubyte, 1)])
-11/05/2020 16:24:00-WARNING-root- Process rank: -1,device: cuda ,n_gpus: 10,distributed training: False,16-bits training: False
-Calling CNerTokenizer.from_pretrained() with the path to a single file or url is deprecated
-Traceback (most recent call last):
-  File "run_ner_crf.py", line 566, in <module>
-    main()
-  File "run_ner_crf.py", line 471, in main
-    do_lower_case=args.do_lower_case,cache_dir=args.cache_dir if args.cache_dir else None
-  File "/data1/anaconda3/lib/python3.6/site-packages/transformers/tokenization_utils_base.py", line 1602, in from_pretrained
-    resolved_vocab_files, pretrained_model_name_or_path, init_configuration, *init_inputs, **kwargs
-  File "/data1/anaconda3/lib/python3.6/site-packages/transformers/tokenization_utils_base.py", line 1674, in _from_pretrained
-    tokenizer = cls(*init_inputs, **init_kwargs)
-TypeError: __init__() got an unexpected keyword argument 'name_or_path'
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:541: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:542: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:543: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:544: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:545: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:550: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  np_resource = np.dtype([("resource", np.ubyte, 1)])
-11/05/2020 16:24:00-WARNING-root- Process rank: -1,device: cuda ,n_gpus: 10,distributed training: False,16-bits training: False
-Calling CNerTokenizer.from_pretrained() with the path to a single file or url is deprecated
-Traceback (most recent call last):
-  File "run_ner_crf.py", line 566, in <module>
-    main()
-  File "run_ner_crf.py", line 471, in main
-    do_lower_case=args.do_lower_case,cache_dir=args.cache_dir if args.cache_dir else None
-  File "/data1/anaconda3/lib/python3.6/site-packages/transformers/tokenization_utils_base.py", line 1602, in from_pretrained
-    resolved_vocab_files, pretrained_model_name_or_path, init_configuration, *init_inputs, **kwargs
-  File "/data1/anaconda3/lib/python3.6/site-packages/transformers/tokenization_utils_base.py", line 1674, in _from_pretrained
-    tokenizer = cls(*init_inputs, **init_kwargs)
-TypeError: __init__() got an unexpected keyword argument 'name_or_path'
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:541: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:542: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:543: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:544: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:545: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
-/data1/anaconda3/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:550: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  np_resource = np.dtype([("resource", np.ubyte, 1)])
-11/05/2020 16:24:06-WARNING-root- Process rank: -1,device: cuda ,n_gpus: 10,distributed training: False,16-bits training: False
-Calling CNerTokenizer.from_pretrained() with the path to a single file or url is deprecated
-Traceback (most recent call last):
-  File "run_ner_crf.py", line 566, in <module>
-    main()
-  File "run_ner_crf.py", line 471, in main
-    do_lower_case=args.do_lower_case,cache_dir=args.cache_dir if args.cache_dir else None
-  File "/data1/anaconda3/lib/python3.6/site-packages/transformers/tokenization_utils_base.py", line 1602, in from_pretrained
-    resolved_vocab_files, pretrained_model_name_or_path, init_configuration, *init_inputs, **kwargs
-  File "/data1/anaconda3/lib/python3.6/site-packages/transformers/tokenization_utils_base.py", line 1674, in _from_pretrained
-    tokenizer = cls(*init_inputs, **init_kwargs)
-TypeError: __init__() got an unexpected keyword argument 'name_or_path'
+  File "run_ner_crf.py", line 479, in main
+    global_step,tr_loss = train(args,train_dataset,model,tokenizer)
+  File "run_ner_crf.py", line 151, in train
+    evaluate(args, model, tokenizer)
+  File "run_ner_crf.py", line 204, in evaluate
+    outputs = model(**inputs)
+  File "/data1/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/data2/yuanjie/study/mininglamp_competition/ner_for_mnl_competition/models/bert_for_ner.py", line 20, in forward
+    outputs = self.bert(input_ids=input_ids,attention_mask= attention_mask,token_type_ids=token_type_ids)
+  File "/data1/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/data1/anaconda3/lib/python3.6/site-packages/transformers/modeling_bert.py", line 762, in forward
+    output_hidden_states=output_hidden_states,
+  File "/data1/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/data1/anaconda3/lib/python3.6/site-packages/transformers/modeling_bert.py", line 439, in forward
+    output_attentions,
+  File "/data1/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/data1/anaconda3/lib/python3.6/site-packages/transformers/modeling_bert.py", line 371, in forward
+    hidden_states, attention_mask, head_mask, output_attentions=output_attentions,
+  File "/data1/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/data1/anaconda3/lib/python3.6/site-packages/transformers/modeling_bert.py", line 315, in forward
+    hidden_states, attention_mask, head_mask, encoder_hidden_states, encoder_attention_mask, output_attentions,
+  File "/data1/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/data1/anaconda3/lib/python3.6/site-packages/transformers/modeling_bert.py", line 239, in forward
+    attention_scores = torch.matmul(query_layer, key_layer.transpose(-1, -2))
+RuntimeError: CUDA out of memory. Tried to allocate 2.81 GiB (GPU 0; 10.73 GiB total capacity; 3.64 GiB already allocated; 778.56 MiB free; 3.85 GiB reserved in total by PyTorch)

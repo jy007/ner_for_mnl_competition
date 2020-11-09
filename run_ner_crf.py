@@ -5,11 +5,12 @@ from transformers import BertTokenizer,BertModel,AlbertConfig,AlbertModel,BertCo
 import os
 import time
 import torch
+import torch.nn as nn
 import glob
 import logging
 from models.bert_for_ner import BertCrfForNer
 from torch.utils.data import DataLoader,RandomSampler,SequentialSampler,TensorDataset,DistributedSampler
-
+from metrics.ner_metrics import SeqEntityScore
 MODEL_CLASSES = {
     ## bert ernie bert_wwm bert_wwwm_ext
     "bert": (BertConfig,BertCrfForNer,CNerTokenizer),
@@ -137,9 +138,8 @@ def train(args,train_dataset,model,tokenizer):
                     torch.nn.utils.clip_grad_norm_(amp.master_params(optimizer),args.max_grad_norm)
                 else:
                     torch.nn.utils.clip_grad_norm_(model.parameters(),args.max_grad_norm)
-                
+                optimizer.step() 
                 scheduler.step()
-                optimizer.step()
                 model.zero_grad()
 
                 global_step += 1
@@ -212,13 +212,6 @@ def evaluate(args,model,tokenizer,prefix=""):
         input_lens = inputs['input_lens'].cpu().numpy().tolist()
         tags = tags.squeeze(0).cpu().numpy().tolist()
 
-        if args.n_gpu > 1:
-            tmp_eval_loss = tmp_eval_loss.mean()  # mean() to average on multi-gpu parallel evaluating
-        eval_loss += tmp_eval_loss.item()
-        nb_eval_steps += 1
-        out_label_ids = inputs['labels'].cpu().numpy().tolist()
-        input_lens = inputs['input_lens'].cpu().numpy().tolist()
-        tags = tags.squeeze(0).cpu().numpy().tolist()
         for i, label in enumerate(out_label_ids):
             temp_1 = []
             temp_2 = []
@@ -503,7 +496,7 @@ def main():
     #  Evaluation
     results = {}
     if args.do_eval and args.local_rank in [-1,0]:
-        tokenizer = tokenizer_class.from_pretrained(args.output_dir,do_lower_case=args.do_lower_case)
+        tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name,do_lower_case=args.do_lower_case)
         checkpoints = [args.output_dir]
         if args.eval_all_checkpoints:
             checkpoints = list(
@@ -533,7 +526,7 @@ def main():
 
     # predict
     if args.do_predict and args.local_rank in [-1,0]:
-        tokenizer  = tokenizer_class.from_pretrained(args.output_dir,do_lower_case=args.do_lower_case)
+        tokenizer  = tokenizer_class.from_pretrained(args.tokenizer_name,do_lower_case=args.do_lower_case)
         checkpoints = [args.output_dir]
 
         if args.predict_checkpoints > 0:
