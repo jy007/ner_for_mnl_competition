@@ -1,6 +1,6 @@
 from finetuning_argparse import get_argparse
 from utils import init_logger,logger,seed_everyting,collate_fn,ProgressBar,CNerTokenizer
-from processors.ner_seq import ner_processors as processors,convert_examples_to_features
+from processors.ner_seq import ner_processors as processors,convert_examples_to_features,convert_predict_examples_to_features
 from transformers import BertTokenizer,BertModel,AlbertConfig,AlbertModel,BertConfig,WEIGHTS_NAME,AdamW,get_linear_schedule_with_warmup
 import os
 import time
@@ -138,8 +138,10 @@ def train(args,train_dataset,model,tokenizer):
                     torch.nn.utils.clip_grad_norm_(amp.master_params(optimizer),args.max_grad_norm)
                 else:
                     torch.nn.utils.clip_grad_norm_(model.parameters(),args.max_grad_norm)
-                optimizer.step() 
+
                 scheduler.step()
+                optimizer.step() 
+                
                 model.zero_grad()
 
                 global_step += 1
@@ -245,6 +247,7 @@ def predict(args, model, tokenizer, prefix=""):
     pred_output_dir = args.output_dir
     if not os.path.exists(pred_output_dir) and args.local_rank in [-1, 0]:
         os.makedirs(pred_output_dir)
+    
     test_dataset = load_and_cache_examples(args, args.task_name, tokenizer, data_type='test')
     # Note that DistributedSampler samples randomly
     test_sampler = SequentialSampler(test_dataset) if args.local_rank == -1 else DistributedSampler(test_dataset)
@@ -263,7 +266,7 @@ def predict(args, model, tokenizer, prefix=""):
         model.eval()
         batch = tuple(t.to(args.device) for t in batch)
         with torch.no_grad():
-            inputs = {"input_ids": batch[0], "attention_mask": batch[1], "labels": None, 'input_lens': batch[4]}
+            inputs = {"input_ids": batch[0], "attention_mask": batch[1], "labels": None, 'input_lens': batch[3]}
             if args.model_type != "distilbert":
                 # XLM and RoBERTa don"t use segment_ids
                 inputs["token_type_ids"] = (batch[2] if args.model_type in ["bert", "xlnet"] else None)
@@ -354,8 +357,9 @@ def load_and_cache_examples(args,task_name,tokenizer,data_type="train"):
             examples = processor.get_dev_examples(args.data_dir)
         else:
             examples = processor.get_test_examples(args.data_dir)
-        
-        features = convert_examples_to_features(examples=examples,
+
+        if data_type == "test":
+            features = convert_predict_examples_to_features(examples=examples,
                                                 tokenizer=tokenizer,
                                                 label_list=label_list,
                                                 max_seq_length=args.train_max_seq_length if data_type =="train" else args.eval_max_seq_length,
@@ -368,7 +372,25 @@ def load_and_cache_examples(args,task_name,tokenizer,data_type="train"):
                                                 pad_token=tokenizer.convert_tokens_to_ids([tokenizer.pad_token])[0],
                                                 pad_token_segment_id=4 if args.model_type in ["xlnet"] else 0,
 
-        )
+            )
+
+
+        else:
+        
+            features = convert_examples_to_features(examples=examples,
+                                                    tokenizer=tokenizer,
+                                                    label_list=label_list,
+                                                    max_seq_length=args.train_max_seq_length if data_type =="train" else args.eval_max_seq_length,
+                                                    cls_token_at_end=bool(args.model_type in ["xlnet"]),
+                                                    pad_on_left=bool(args.model_type in ["xlnet"]),
+                                                    cls_token=tokenizer.cls_token,
+                                                    cls_token_segment_id=2 if args.model_type in ["xlnet"] else 0,
+                                                    sep_token=tokenizer.sep_token,
+                                                    #pad on left for xlnet
+                                                    pad_token=tokenizer.convert_tokens_to_ids([tokenizer.pad_token])[0],
+                                                    pad_token_segment_id=4 if args.model_type in ["xlnet"] else 0,
+
+            )
         if args.local_rank in [-1,0]:
             logger.info("save features into cached file %s",cached_features_file)
             torch.save(features,cached_features_file)
@@ -377,14 +399,26 @@ def load_and_cache_examples(args,task_name,tokenizer,data_type="train"):
 
     #convert to tensors and build dateset
     print(features[0])
+
+
     all_input_ids = torch.tensor([f.input_ids for f in features],dtype=torch.long)
     all_input_masks = torch.tensor([f.input_mask for f in features],dtype=torch.long)
     all_segment_ids = torch.tensor([f.segment_id for f in features],dtype=torch.long)
-    all_label_ids =  torch.tensor([f.label_ids for f in features],dtype=torch.long)
+    
     all_lens = torch.tensor([f.input_len for f in features],dtype=torch.long)
-    dataset = TensorDataset(all_input_ids,all_input_masks,all_segment_ids,all_lens,all_label_ids)
 
-    return dataset
+    if data_type != "test":
+        all_label_ids =  torch.tensor([f.label_ids for f in features],dtype=torch.long)
+
+
+        dataset = TensorDataset(all_input_ids,all_input_masks,all_segment_ids,all_lens,all_label_ids)
+
+        return dataset
+    else:
+        dataset = TensorDataset(all_input_ids,all_input_masks,all_segment_ids,all_lens,all_label_ids)
+
+        return dataset
+
 
 
 
@@ -541,6 +575,7 @@ def main():
                 prefix = checkpoint.split("/")[-1] if checkpoint.find("checkpoint") != -1 else ""
                 model = model_class.from_pretrained(checkpoint,config=config)
                 model.to(args.device)
+                print("start predict!!!")
                 predict(args,model,tokenizer,prefix)
 
 

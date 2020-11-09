@@ -10,8 +10,7 @@ python  run_ner_crf.py \
   --config_name=$BERT_BASE_DIR/bert_config.json \
   --tokenizer_name=$BERT_BASE_DIR/vocab.txt\
   --task_name=$TASK_NAME \
-  --do_train \
-  --do_eval \
+  --do_predict \
   --do_lower_case \
   --data_dir=$DATA_DIR/${TASK_NAME}/ \
   --train_max_seq_length=128 \
